@@ -11,7 +11,8 @@
     "example:basic": "ts-node examples/basic.ts",
     "example:priority": "ts-node examples/priority.ts",
     "clean": "rm -rf dist",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "vitest run"
   },
   "keywords": [
     "queue",
@@ -32,6 +33,7 @@
     "typescript": "^5.4.0",
     "ts-node": "^10.9.2",
     "@types/node": "^20.11.0",
-    "@types/uuid": "^9.0.7"
+    "@types/uuid": "^9.0.7",
+    "vitest": "^2.0.0"
   }
 }
