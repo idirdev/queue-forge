@@ -165,3 +165,33 @@ npx ts-node examples/priority.ts
 ## License
 
 MIT
+
+---
+
+## 🇫🇷 Documentation en français
+
+### Description
+Queue Forge est un processeur de files d'attente en mémoire avec gestion des priorités, des tentatives, du contrôle de concurrence et de l'architecture événementielle. Il supporte les jobs différés, les planifications récurrentes et le suivi de progression, le tout en TypeScript sans dépendances externes.
+
+### Installation
+```bash
+npm install queue-forge
+```
+
+### Utilisation
+```typescript
+import { Queue } from 'queue-forge';
+
+const queue = new Queue({ name: 'ma-file', concurrency: 5, strategy: 'priority' });
+
+queue.process(async (data, jobId, reportProgress) => {
+  reportProgress(50);
+  // Traitement...
+  reportProgress(100);
+  return { traite: true };
+});
+
+queue.add({ email: 'utilisateur@exemple.com' }, { priority: 10 });
+```
+
+Consultez la documentation anglaise ci-dessus pour la référence complète de l'API, les stratégies de retry, les jobs récurrents et les événements disponibles.
