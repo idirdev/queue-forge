@@ -284,6 +284,7 @@ describe('QueueForge factory', () => {
 
   it('should pause and resume', () => {
     const queue = QueueForge.createFIFO('pause-test');
+    queue.process(async () => {});
     queue.pause();
     expect(queue.getStats().paused).toBe(true);
     queue.resume();
